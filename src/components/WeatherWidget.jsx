@@ -1,11 +1,9 @@
-import React from "react";
 import CitySelector from "./CitySelector";
 import WeatherDisplay from "./WeatherDisplay";
 import ForecastList from "./ForecastList";
 import DataVisualization from "./DataVisualization";
 import SettingsPanel from "./SettingsPanel";
 import useWeatherData from "../hooks/useWeatherData";
-import { Icon } from "@iconify/react/dist/iconify.js";
 
 const WeatherWidget = () => {
   const weatherData = useWeatherData();
