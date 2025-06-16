@@ -9,4 +9,5 @@ export default defineConfig({
     react()
   ],
   envPrefix: ['VITE_'],
+  base: "/weather-widgets"
 })
