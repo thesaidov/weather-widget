@@ -9,5 +9,10 @@ export default defineConfig({
     react()
   ],
   envPrefix: ['VITE_'],
-  base: "/weather-widgets"
+  base: "/weather-widgets",
+  test: {
+    globals: true,
+    environment: 'jsdom',
+    setupFiles: './src/tests/setup.js',
+  },
 })

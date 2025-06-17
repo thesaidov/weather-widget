@@ -3,7 +3,7 @@ import { weatherReducer, initialState } from "../reducers/weatherReducer";
 // import request from "../services/WeatherService";
 import {fetchWeatherFromAPI} from "../services/WeatherService";
 
-const useWeatherData = () => {
+function useWeatherData() {
   const [state, dispatch] = useReducer(weatherReducer, initialState);
 
   useEffect(() => {
