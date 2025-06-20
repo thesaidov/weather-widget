@@ -1,6 +1,6 @@
 {
   "name": "openweather",
-  "homepage": "https://thesaidov.github.io/weather-widgets/",
+  "homepage": "https://thesaidov.github.io/weather-widget/",
   "private": true,
   "version": "0.0.0",
   "type": "module",
