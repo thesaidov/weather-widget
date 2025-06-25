@@ -13,6 +13,9 @@
     "deploy": "gh-pages -d dist",
     "test": "vitest"
   },
+    "rewrites": [
+    { "source": "/(.*)", "destination": "/" }
+  ],
   "dependencies": {
     "@tailwindcss/vite": "^4.1.8",
     "axios": "^1.9.0",
