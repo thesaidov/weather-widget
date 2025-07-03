@@ -5,7 +5,7 @@ import debounce from "../utils/debounce";
 import useWeatherData from "../hooks/useWeatherData";
 import { ThemeContext } from "../context/ThemeContext";
 
-const CITIES = ["London", "New York", "Tokyo", "Sydney", "Cairo"];
+const CITIES = ["London", "New York", "Tokyo", "Sydney", "Cairo", "Tashkent"];
 
 const CitySelector = ({ city, dispatch }) => {
   const [search, setSearch] = useState("");
@@ -37,6 +37,7 @@ const CitySelector = ({ city, dispatch }) => {
           type="text"
           list="city-list"
           placeholder="Search city..."
+          defaultValue={"London"}
           value={search}
           onChange={handleChange}
           className={`${theme.theme ? "border-black" : "border-white"} outline-none border-[1px] px-4 py-1 rounded-md`}

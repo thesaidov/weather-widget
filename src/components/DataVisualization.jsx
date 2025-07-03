@@ -7,7 +7,8 @@ import {
   PointElement,
   Title,
   Tooltip,
-  Legend
+  Legend,
+  defaults
 } from "chart.js"
 
 Chartjs.register(
@@ -22,23 +23,6 @@ Chartjs.register(
 
 const DataVisualization = ({ data }) => {
   if (!data || data.length === 0) return <div>No data available</div>;
-  // console.log(data);
-  
-
-  
-  // const width = 600;
-  // const height = 200;
-  // const padding = 40;
-
-  // const temps = data.map(d => d.temp);
-  // // const days = data.map(d => d.day);
-  // const maxTemp = Math.max(...temps);
-  // const minTemp = Math.min(...temps);
-
-  // const getX = (i) => padding + (i * (width - 2 * padding)) / (data.length - 1);
-  // const getY = (temp) => height - padding - ((temp - minTemp) / (maxTemp - minTemp)) * (height - 2 * padding);
-
-  // const points = data.map((d, i) => `${getX(i)},${getY(d.temp)}`).join(" ");
 
  
     let labels = []
@@ -51,31 +35,40 @@ const DataVisualization = ({ data }) => {
     })
   
   
+defaults.maintainAspectRatio = false;
+defaults.responsive = true
+defaults.onResize
+
+Legend.display = true
+defaults.plugins.legend.labels.boxHeight = 0
 
   return (
-      // <svg height={height} style={{width: "100%"}} className="temperature-chart">
-      //   <polyline
-      //     fill="none"
-      //     stroke="#0d6efd"
-      //     strokeWidth="2"
-      //     points={points}
-          
-      //   />
-      //   {data.map((d, i) => (
-      //     <g key={i}>
-      //       <circle cx={getX(i)} cy={getY(d.temp)} r="4" fill="#0d6efd" />
-      //       <text x={getX(i)} y={height - 10} textAnchor="middle" fontSize="12">{d.day}</text>
-      //     </g>
-      //   ))}
-      // </svg>
-      <div className="animate-fadeIn w-full">
+      <div className=" w-full">
         <Line 
-          options={{}} 
+          options={{
+            elements: {
+              line: {
+                tension: 0.8
+              }
+            },
+            plugins: {
+              title:{
+                display: true,
+                text: "Weekly forecast",
+                align: "start",
+                font: {
+                  weight: "bold",
+                  size: 20
+                },
+                color: "black"
+              }
+            }
+          }} 
           data={{
             labels: labels,
             datasets: [
               {
-               label: '',
+               label: 'Forecast',
                data: dataset,
                borderColor: "blue",
              }

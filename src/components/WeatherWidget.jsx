@@ -8,9 +8,11 @@ import useWeatherData from "../hooks/useWeatherData";
 const WeatherWidget = () => {
   const weatherData = useWeatherData();
 
+  // console.log(weatherData);
+  
   return (
-    <div className="h-full flex flex-col gap-10  ">
-      <div className="flex justify-between gap-5 items-center">
+    <div className="h-screen flex flex-col gap-10">
+      <div className="flex flex-wrap justify-between gap-5 items-center">
         <CitySelector dispatch={weatherData.dispatch} />
         <SettingsPanel dispatch={weatherData.dispatch} state={weatherData.state}/>
       </div>

@@ -12,7 +12,7 @@ const SettingsPanel = ({dispatch, state}) => {
     <div className="flex animate-fadeIn md:gap-32 sm:gap-24 max-sm:gap-9">
       <div className="setting-item">
         <button onClick={handleClick} className="text-6xl">
-          {state.unit ? "°F" : "°C"}
+          {state.unit ? "Kelvin(°K)" : "Celsius(°C)"}
         </button>
       </div>
       <div className="setting-item">

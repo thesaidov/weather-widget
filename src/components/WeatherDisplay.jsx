@@ -1,12 +1,12 @@
 import React from "react";
 import { Icon } from "@iconify/react/dist/iconify.js";
-import { fahrenheitToCelsius } from "../utils/tempUtils";
+import { kelvinToCelsius } from "../utils/tempUtils";
 
 const WeatherDisplay = ({ data, unit }) => {
   if (!data || !data.temp || !data.description) return <div>Loading current weather...</div>;
   
 
-  const temperatureUnit = unit ? "°F" : "°C";
+  const temperatureUnit = unit ? "°K" : "°C";
 
   let desc
 
@@ -30,7 +30,7 @@ const WeatherDisplay = ({ data, unit }) => {
     <div className="mb-10 animate-fadeIn">
       <h2>Current Weather</h2>
       <div className="flex gap-10 text-6xl">
-        <span className="uppercase">{unit ? data.temp : fahrenheitToCelsius(data.temp).toFixed(2)}{temperatureUnit}</span>
+        <span className="uppercase">{unit ? data.temp : kelvinToCelsius(data.temp).toFixed(2)}{temperatureUnit}</span>
         <span className="capitalize">{desc}</span>
       </div>
     </div>

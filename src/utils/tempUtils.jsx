@@ -1,5 +1,6 @@
 export const celsiusToFahrenheit = (c) => (c * 9) / 5 + 32;
 export const fahrenheitToCelsius = (f) => (((f - 32) * 5) / 9);
+export const kelvinToCelsius = (k) =>(k-273.15)
 
 export const calculateForecastStats = (forecast) => {
   const temps = forecast.map((f) => f.temp);
